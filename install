@@ -1,0 +1,21 @@
+rm -rf ~/.config/hypr
+ln -srv hypr ~/.config
+
+rm -rf ~/.config/kitty
+ln -srv kitty ~/.config
+
+rm -rf ~/.config/Kvantum
+ln -srv Kvantum ~/.config
+
+rm -rf ~/.config/rofi
+ln -srv rofi ~/.config
+
+rm -rf ~/.config/swaylock
+ln -srv swaylock ~/.config
+
+rm -rf ~/.config/waybar
+ln -srv waybar ~/.config
+
+rm -rf ~/.config/wlogout
+ln -srv wlogout ~/.config
+

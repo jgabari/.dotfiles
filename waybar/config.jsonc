@@ -1,0 +1,42 @@
+{
+// Header //
+
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "height": 10,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+
+
+    // Load Modules
+    "include": ["~/.config/waybar/modules.jsonc"],
+
+// Positions //
+
+	"modules-left": [
+        "hyprland/workspaces",
+        "group/ldl",
+        "wlr/taskbar",
+        "group/llt"
+    ],
+
+	"modules-center": [
+        "group/ctd",
+        "clock",
+        "group/cdt"
+    ],
+
+    "modules-right": [
+        "group/rlt",
+        "custom/updates",
+        "backlight",
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "battery",
+        "group/rdl",
+        "custom/power"
+    ],
+}

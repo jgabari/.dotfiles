@@ -1,0 +1,235 @@
+@import 'colors-waybar.css';
+
+/*
+    ┏┓┓ ┏┳┓  ┏┓┏┓┓ ┏┓┳┓┏┓
+    ┃┃┃┃┃┃┃  ┃ ┃┃┃ ┃┃┣┫┗┓
+    ┗┛┗┻┛┛┗  ┗┛┗┛┗┛┗┛┛┗┗┛
+*/
+
+/* waybar area/group colors*/
+@define-color apps rgba(0, 0, 0, 0.6);
+@define-color quicklinks rgba(0, 0, 0, 0.4);
+@define-color workspaces rgba(0, 0, 0, 0.6);
+@define-color taskbar rgba(0, 0, 0, 0.4);
+@define-color clock @foreground;
+@define-color misc rgba(0, 0, 0, 0.4);
+@define-color timer rgba(0, 0, 0, 0.4);
+@define-color devices rgba(0, 0, 0, 0.6);
+@define-color system rgba(0, 0, 0, 0.4);
+/* workspace text colors */
+@define-color workspace_fg @foreground;
+@define-color act_wrk_fg #abb2bf;
+@define-color use_wrk_fg @color5;
+/* workspace button-background colors */
+@define-color workspace_bg rgba(0, 0, 0, 0.6);
+@define-color act_wrk_bg @foreground;
+/* taskbar button-background colors */
+@define-color taskbar_bg rgba(130, 130, 130, 0.2);
+/* updates-widget icon+text colors */
+@define-color updates_green #a3be8c;
+@define-color updates_yellow #ff9a3c;
+@define-color updates_red #dc2f2f;
+
+@define-color darker rgba(40, 44, 52, 0.9);
+@define-color lighter rgba(57, 62, 72, 0.9);
+
+/*
+    ┏┓┏┓┳┓┏┓┳┓┏┓┓
+    ┃┓┣ ┃┃┣ ┣┫┣┫┃
+    ┗┛┗┛┛┗┗┛┛┗┛┗┗┛
+*/
+
+* {
+    font-family: "FiraCode Nerd Font";
+    font-weight: 600;
+    font-size: 12px;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    padding: 0;
+    margin: 0;
+    color: @foreground;
+    background: transparent;
+}
+
+tooltip {
+    background: @black;
+    color: @foreground;
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+/*
+    ┓ ┏┏┓┳┓┓┏┓┏┓┏┓┏┓┏┓┏┓┏┓
+    ┃┃┃┃┃┣┫┃┫ ┗┓┃┃┣┫┃ ┣ ┗┓
+    ┗┻┛┗┛┛┗┛┗┛┗┛┣┛┛┗┗┛┗┛┗┛
+*/
+
+#workspaces {
+    padding: 2px 10px;
+
+}
+
+/* ALL workspace buttons (Focused + Unfocused) */
+#workspaces button:hover {
+}
+
+/* Only focused workspace*/
+#workspaces button.active {
+    color:  @foreground;
+    background: @lighter;
+    border: none;
+    padding: 1px 2px;
+    margin: 1px 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Unfocused workspace WITH opened Apps
+   !!! Border style is valid for ALL buttons,
+   Set seperate border style for every button. */
+#workspaces button {
+    color: @workspace_fg;
+    background: @darker;
+    padding: 1px 2px;
+    margin: 1px 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:not(.empty):not(.active) {
+    color: @act_wrk_bg;
+    padding: 1px 2px;
+    margin: 1px 4px;
+}
+
+/*
+   OTHER POSSIBLE DESIGN-ATTRIBUTES:
+      #workspaces button.empty
+      #workspaces button.persistent
+      #workspaces button:not(.persistent)
+      #workspaces button:not(.active) usw.
+*/
+
+/*
+   ┏┳┓┏┓┏┓┓┏┓┳┓┏┓┳┓
+    ┃ ┣┫┗┓┃┫ ┣┫┣┫┣┫
+    ┻ ┛┗┗┛┛┗┛┻┛┛┗┛┗
+*/
+
+/*
+#taskbar.empty {
+    background: transparent;
+}
+*/
+
+#taskbar {
+    padding: 2px 10px;
+}
+
+#taskbar button {
+    color: @workspace_fg;
+    background: @lighter;
+    padding: 1px 1px 1px 5px;
+    margin: 1px 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+#taskbar button.active {
+    color:  @act_wrk_fg;
+    background: @darker;
+    border: none;
+    transition: all 0.3s ease-in-out;
+
+}
+
+#taskbar button:hover {
+}
+
+/*
+    ┏┓┏┳┓┓┏┏┓┳┓
+    ┃┃ ┃ ┣┫┣ ┣┫
+    ┗┛ ┻ ┛┗┗┛┛┗
+*/
+
+#clock {
+    color: @clock;
+    padding: 2px 10px 0px 10px;
+    opacity: 1;
+}
+
+/*
+    ┏┓┏┓┳┳┓┳┳┓┏┓┳┓  ┏┓┏┓┳┓┳┓┳┳┓┏┓       ┓  ┳┳┓┏┓┳┓┏┓┳┳┓
+    ┃ ┃┃┃┃┃┃┃┃┃┃┃┃  ┃┃┣┫┃┃┃┃┃┃┃┃┓  ┏┓┏┓┏┫  ┃┃┃┣┫┣┫┃┓┃┃┃
+    ┗┛┗┛┛ ┗┛ ┗┗┛┛┗  ┣┛┛┗┻┛┻┛┻┛┗┗┛  ┗┻┛┗┗┻  ┛ ┗┛┗┛┗┗┛┻┛┗
+*/
+
+/* inactiv widget modules */
+#clock, #custom-updates, #backlight, #pulseaudio, #network, #bluetooth, #battery, #custom-power {
+    padding: 0px 5px;
+}
+#custom-updates, #backlight, #pulseaudio, #network, #bluetooth, #battery, #taskbar, #clock {
+  background: @lighter;
+}
+
+#custom-power, #workspaces {
+  background: @darker;
+}
+
+#custom-power {
+  padding: 0px 20px 0px 15px;
+}
+
+/*
+    ┏┓┏┓┓ ┏┏┓┳┓┓ ┳┳┓┏┓  ┳┳┓┏┓┳┓┳┳
+    ┃┃┃┃┃┃┃┣ ┣┫┃ ┃┃┃┣   ┃┃┃┣ ┃┃┃┃
+    ┣┛┗┛┗┻┛┗┛┛┗┗┛┻┛┗┗┛  ┛ ┗┗┛┛┗┗┛
+*/
+
+#ldl,
+#llt,
+#ctd,
+#cdt,
+#rlt,
+#rdl
+{
+background: transparent;
+min-height:0px;
+}
+
+#ldl {
+border-left: 15 solid @darker;
+border-bottom: 30 solid @lighter;
+margin-left:0;
+}
+
+#llt {
+border-left: 15 solid @lighter;
+border-bottom: 30 solid transparent;
+margin-left:0;
+}
+
+#ctd {
+  border-right: 15 solid @lighter;
+  border-bottom: 30 solid transparent;
+  margin-left: 0;
+}
+
+#cdt {
+  border-left: 15 solid @lighter;
+  border-bottom: 30 solid transparent;
+  margin-left: 0;
+}
+
+#rdl {
+  border-right: 15 solid @darker;
+  border-bottom: 30 solid @lighter;
+  margin-left: 0;
+}
+
+#rlt {
+  border-right: 15 solid @lighter;
+  border-bottom: 30 solid transparent;
+  margin-left: 0;
+}
