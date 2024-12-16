@@ -19,3 +19,15 @@ ln -srv waybar ~/.config
 rm -rf ~/.config/wlogout
 ln -srv wlogout ~/.config
 
+rm -rf ~/.config/gtk-3.0
+ln -srv gtk-3.0 ~/.config
+
+rm -rf ~/.config/gtk-4.0
+ln -srv gtk-4.0 ~/.config
+
+rm -rf ~/.config/qt5ct
+ln -srv qt5ct ~/.config
+
+rm -rf ~/.config/qt6ct
+ln -srv qt6ct ~/.config
+
