@@ -30,8 +30,8 @@
 @define-color updates_yellow #ff9a3c;
 @define-color updates_red #dc2f2f;
 
-@define-color darker rgba(40, 44, 52, 0.9);
-@define-color lighter rgba(57, 62, 72, 0.9);
+@define-color darker rgba(0, 0, 0, 0.6);
+@define-color lighter rgba(18, 18, 18, 0.6);
 
 /*
     ┏┓┏┓┳┓┏┓┳┓┏┓┓
@@ -40,9 +40,9 @@
 */
 
 * {
-    font-family: "FiraCode Nerd Font";
-    font-weight: 600;
-    font-size: 12px;
+    font-family: "Cantarell";
+    font-weight: 700;
+    font-size: 14px;
     min-height: 0;
     padding: 0;
     margin: 0;

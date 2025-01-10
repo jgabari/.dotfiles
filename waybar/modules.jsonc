@@ -276,13 +276,13 @@
     "tooltip-format": "{icon}  Volume: {volume}%",
     "scroll-step": 5,
     "format-icons": {
-        "headphone": "",
-        "hands-free": "",
-        "headset": "",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": ["", "", ""]
+        "headphone": " ",
+        "hands-free": " ",
+        "headset": " ",
+        "phone": " ",
+        "portable": " ",
+        "car": " ",
+        "default": ["", " ", " "]
     }
 },
 
